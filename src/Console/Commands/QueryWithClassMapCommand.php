@@ -67,7 +67,7 @@ class QueryWithClassMapCommand extends Command
         try {
             $response = $classMapper->queryWithContext($query, $classNames);
             
-            $this->line('\n' . $response);
+            $this->line("\n" . $response);
             
             return 0;
         } catch (\Exception $e) {
