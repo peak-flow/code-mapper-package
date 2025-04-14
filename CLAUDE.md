@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Docblocks for all methods/classes with @param, @return, etc.
 - Type hints for parameters and return types
 - Error handling: Use exception handling with try/catch blocks
-- Namespaces: Cascade\ClaudioClassMapper for main code, Cascade\ClaudioClassMapper\Tests for tests
+- Namespaces: PeakFlow\CodeMapper for main code, PeakFlow\CodeMapper\Tests for tests
 - Imports: Group by type (Laravel, PHP core, custom)
 - 4 spaces for indentation, no tabs
 - when creating features

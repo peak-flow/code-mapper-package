@@ -20,8 +20,8 @@
     </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>
-        <env name="CLAUDIO_AI_PROVIDER" value="openai"/>
-        <env name="CLAUDIO_API_KEY" value="test-api-key"/>
-        <env name="CLAUDIO_MODEL" value="gpt-4o"/>
+        <env name="CODE_MAPPER_AI_PROVIDER" value="openai"/>
+        <env name="CODE_MAPPER_API_KEY" value="test-api-key"/>
+        <env name="CODE_MAPPER_MODEL" value="gpt-4o"/>
     </php>
 </phpunit>

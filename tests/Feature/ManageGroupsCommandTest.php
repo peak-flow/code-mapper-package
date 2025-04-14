@@ -18,7 +18,7 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testCreateGroup()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'test-group',
             '--description' => 'Test group description',
@@ -35,7 +35,7 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testCreateGroupWithoutName()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             '--description' => 'Test group description',
             '--class' => [TestUser::class],
@@ -51,7 +51,7 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testCreateGroupWithoutClasses()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'test-group',
         ])
@@ -62,7 +62,7 @@ class ManageGroupsCommandTest extends TestCase
     public function testUpdateGroup()
     {
         // First create a group
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'test-group',
             '--description' => 'Original description',
@@ -70,7 +70,7 @@ class ManageGroupsCommandTest extends TestCase
         ]);
         
         // Then update it
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'update',
             'name' => 'test-group',
             '--description' => 'Updated description',
@@ -87,7 +87,7 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testUpdateNonExistentGroup()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'update',
             'name' => 'non-existent-group',
         ])
@@ -98,14 +98,14 @@ class ManageGroupsCommandTest extends TestCase
     public function testDeleteGroup()
     {
         // First create a group
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'test-group',
             '--class' => [TestUser::class],
         ]);
         
         // Then delete it
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'delete',
             'name' => 'test-group',
         ])
@@ -121,14 +121,14 @@ class ManageGroupsCommandTest extends TestCase
     public function testDeleteGroupCancelled()
     {
         // First create a group
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'test-group',
             '--class' => [TestUser::class],
         ]);
         
         // Then try to delete it but cancel
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'delete',
             'name' => 'test-group',
         ])
@@ -143,7 +143,7 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testDeleteNonExistentGroup()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'delete',
             'name' => 'non-existent-group',
         ])
@@ -154,7 +154,7 @@ class ManageGroupsCommandTest extends TestCase
     public function testShowGroup()
     {
         // First create a group
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'test-group',
             '--description' => 'Test group description',
@@ -162,7 +162,7 @@ class ManageGroupsCommandTest extends TestCase
         ]);
         
         // Then show it
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'show',
             'name' => 'test-group',
         ])
@@ -175,7 +175,7 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testShowNonExistentGroup()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'show',
             'name' => 'non-existent-group',
         ])
@@ -186,14 +186,14 @@ class ManageGroupsCommandTest extends TestCase
     public function testListGroups()
     {
         // Create some groups
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'group1',
             '--description' => 'Group 1',
             '--class' => [TestUser::class],
         ]);
         
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'create',
             'name' => 'group2',
             '--description' => 'Group 2',
@@ -201,11 +201,11 @@ class ManageGroupsCommandTest extends TestCase
         ]);
         
         // List all groups
-        $this->artisan('claudio:groups')
+        $this->artisan('code:groups')
             ->assertExitCode(0);
         
         // Default action is list
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'list',
         ])
             ->assertExitCode(0);
@@ -213,14 +213,14 @@ class ManageGroupsCommandTest extends TestCase
     
     public function testListEmptyGroups()
     {
-        $this->artisan('claudio:groups')
+        $this->artisan('code:groups')
             ->expectsOutput('No groups found')
             ->assertExitCode(0);
     }
     
     public function testInvalidAction()
     {
-        $this->artisan('claudio:groups', [
+        $this->artisan('code:groups', [
             'action' => 'invalid-action',
         ])
             ->expectsOutput('Unknown action: invalid-action')

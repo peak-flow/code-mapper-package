@@ -17,12 +17,12 @@ class AnthropicApiTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        
+
         // Set up config
-        Config::set('claudio-class-mapper.ai_provider', 'anthropic');
-        Config::set('claudio-class-mapper.api_key', 'test-api-key');
-        Config::set('claudio-class-mapper.model', 'claude-3-opus-20240229');
-        
+        Config::set('code-mapper.ai_provider', 'anthropic');
+        Config::set('code-mapper.api_key', 'test-api-key');
+        Config::set('code-mapper.model', 'claude-3-opus-20240229');
+
         // Create class mapper instance with the real application
         $this->classMapper = new ClassMapper($this->app);
     }
@@ -58,10 +58,10 @@ class AnthropicApiTest extends TestCase
 
         // Call the method with the mock client
         $result = $method->invokeArgs($this->classMapper, [
-            $mockClient, 
-            'test-api-key', 
-            'claude-3-opus-20240229', 
-            'Test query', 
+            $mockClient,
+            'test-api-key',
+            'claude-3-opus-20240229',
+            'Test query',
             'Test context'
         ]);
 
@@ -105,10 +105,10 @@ class AnthropicApiTest extends TestCase
 
         // Call the method with the mock client
         $result = $method->invokeArgs($this->classMapper, [
-            $mockClient, 
-            'test-api-key', 
-            'claude-3-opus-20240229', 
-            'Test query', 
+            $mockClient,
+            'test-api-key',
+            'claude-3-opus-20240229',
+            'Test query',
             'Test context'
         ]);
 

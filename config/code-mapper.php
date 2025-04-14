@@ -11,11 +11,11 @@ return [
     |
     */
     'ai_provider' => env('CODE_MAPPER_AI_PROVIDER', 'openai'),
-    
+
     'api_key' => env('CODE_MAPPER_API_KEY'),
-    
+
     'model' => env('CODE_MAPPER_MODEL', 'gpt-4o'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Class Mapping Settings
@@ -28,14 +28,14 @@ return [
     'scan_paths' => [
         'app',
     ],
-    
+
     'exclude_paths' => [
         'app/Http/Middleware',
         'app/Exceptions',
     ],
-    
+
     'cache_duration' => 60 * 24, // Cache for 24 hours in minutes
-    
+
     /*
     |--------------------------------------------------------------------------
     | Output Settings
@@ -44,9 +44,9 @@ return [
     | Configure how the class mapper formats and stores its output.
     |
     */
-    'storage_path' => storage_path('app/claudio-class-mapper'),
-    
+    'storage_path' => storage_path('app/code-mapper'),
+
     'storage_disk' => 'local',
-    
+
     'max_tokens_per_chunk' => 8000,
 ];
