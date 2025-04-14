@@ -46,13 +46,13 @@ Edit the published configuration file at `config/claudio-class-mapper.php` to cu
 Generate a class map of all classes in your configured scan paths:
 
 ```bash
-php artisan claudio:generate-map
+php artisan claudio:generate
 ```
 
 Or specify particular classes:
 
 ```bash
-php artisan claudio:generate-map --class=App\\Models\\User --class=App\\Services\\UserService
+php artisan claudio:generate --class=App\\Models\\User --class=App\\Services\\UserService
 ```
 
 ### Managing Class Groups
