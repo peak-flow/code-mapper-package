@@ -1,5 +1,5 @@
 {
-    "name": "cascade/claudio-class-mapper",
+    "name": "peak-flow/code-mapper-package",
     "description": "Laravel package for AI-powered class mapping to enable efficient AI queries with smaller context windows",
     "type": "library",
     "license": "MIT",
@@ -15,7 +15,7 @@
     },
     "authors": [
         {
-            "name": "Cascade"
+            "name": "Peak Flow"
         }
     ],
     "require": {

@@ -1,4 +1,4 @@
-# Claudio Class Mapper
+# Code Mapper Package
 
 A Laravel package that allows developers to select specific classes in their applications and use AI API calls to create code maps. These code maps enable sending questions to AI systems using smaller context windows, resulting in more efficient and cost-effective AI interactions.
 
@@ -7,7 +7,7 @@ A Laravel package that allows developers to select specific classes in their app
 You can install the package via composer:
 
 ```bash
-composer require cascade/claudio-class-mapper
+composer require peak-flow/code-mapper-package
 ```
 
 After installing the package, publish the configuration file:
