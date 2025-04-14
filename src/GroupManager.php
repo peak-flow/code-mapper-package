@@ -1,6 +1,6 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper;
+namespace PeakFlow\CodeMapper;
 
 use Illuminate\Support\Facades\DB;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests\Fixtures;
+namespace PeakFlow\CodeMapper\Tests\Fixtures;
 
 class TestUser
 {

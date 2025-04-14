@@ -1,8 +1,8 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests;
+namespace PeakFlow\CodeMapper\Tests;
 
-use Cascade\ClaudioClassMapper\ClaudioClassMapperServiceProvider;
+use PeakFlow\CodeMapper\CodeMapperServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -16,7 +16,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            ClaudioClassMapperServiceProvider::class,
+            CodeMapperServiceProvider::class,
         ];
     }
 
@@ -36,13 +36,13 @@ class TestCase extends Orchestra
             'prefix'   => '',
         ]);
         
-        // Setup claudio-class-mapper config
-        $app['config']->set('claudio-class-mapper.ai_provider', 'openai');
-        $app['config']->set('claudio-class-mapper.api_key', 'test-api-key');
-        $app['config']->set('claudio-class-mapper.model', 'gpt-4o');
-        $app['config']->set('claudio-class-mapper.scan_paths', ['tests/Fixtures']);
-        $app['config']->set('claudio-class-mapper.exclude_paths', ['tests/Fixtures/Excluded']);
-        $app['config']->set('claudio-class-mapper.storage_path', __DIR__ . '/storage/claudio-class-mapper');
+        // Setup code-mapper config
+        $app['config']->set('code-mapper.ai_provider', 'openai');
+        $app['config']->set('code-mapper.api_key', 'test-api-key');
+        $app['config']->set('code-mapper.model', 'gpt-4o');
+        $app['config']->set('code-mapper.scan_paths', ['tests/Fixtures']);
+        $app['config']->set('code-mapper.exclude_paths', ['tests/Fixtures/Excluded']);
+        $app['config']->set('code-mapper.storage_path', __DIR__ . '/storage/code-mapper');
     }
     
     /**
@@ -55,7 +55,7 @@ class TestCase extends Orchestra
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         
         // Create storage directory
-        $storageDir = __DIR__ . '/storage/claudio-class-mapper';
+        $storageDir = __DIR__ . '/storage/code-mapper';
         if (!file_exists($storageDir)) {
             mkdir($storageDir, 0755, true);
         }

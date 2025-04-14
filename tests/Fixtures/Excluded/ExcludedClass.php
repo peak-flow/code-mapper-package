@@ -1,6 +1,6 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests\Fixtures\Excluded;
+namespace PeakFlow\CodeMapper\Tests\Fixtures\Excluded;
 
 class ExcludedClass
 {

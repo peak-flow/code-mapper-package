@@ -5,12 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Cascade\\ClaudioClassMapper\\": "src/"
+            "PeakFlow\\CodeMapper\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cascade\\ClaudioClassMapper\\Tests\\": "tests/"
+            "PeakFlow\\CodeMapper\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Cascade\\ClaudioClassMapper\\ClaudioClassMapperServiceProvider"
+                "PeakFlow\\CodeMapper\\CodeMapperServiceProvider"
             ]
         }
     },

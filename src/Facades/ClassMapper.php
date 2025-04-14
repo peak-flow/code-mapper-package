@@ -1,6 +1,6 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Facades;
+namespace PeakFlow\CodeMapper\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array loadClassMap()
  * @method static string queryWithContext(string $query, array $classNames)
  * 
- * @see \Cascade\ClaudioClassMapper\ClassMapper
+ * @see \PeakFlow\CodeMapper\ClassMapper
  */
 class ClassMapper extends Facade
 {
@@ -20,6 +20,6 @@ class ClassMapper extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'claudio-class-mapper';
+        return 'code-mapper';
     }
 }

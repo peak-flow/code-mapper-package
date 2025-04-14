@@ -1,13 +1,13 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests\Unit;
+namespace PeakFlow\CodeMapper\Tests\Unit;
 
-use Cascade\ClaudioClassMapper\ClassMapper;
-use Cascade\ClaudioClassMapper\Console\Commands\GenerateClassMapCommand;
-use Cascade\ClaudioClassMapper\Console\Commands\ManageGroupsCommand;
-use Cascade\ClaudioClassMapper\Console\Commands\QueryWithClassMapCommand;
-use Cascade\ClaudioClassMapper\GroupManager;
-use Cascade\ClaudioClassMapper\Tests\TestCase;
+use PeakFlow\CodeMapper\ClassMapper;
+use PeakFlow\CodeMapper\Console\Commands\GenerateClassMapCommand;
+use PeakFlow\CodeMapper\Console\Commands\ManageGroupsCommand;
+use PeakFlow\CodeMapper\Console\Commands\QueryWithClassMapCommand;
+use PeakFlow\CodeMapper\GroupManager;
+use PeakFlow\CodeMapper\Tests\TestCase;
 
 class ServiceProviderTest extends TestCase
 {

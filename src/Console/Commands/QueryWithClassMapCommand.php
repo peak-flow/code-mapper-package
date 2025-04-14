@@ -1,10 +1,10 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Console\Commands;
+namespace PeakFlow\CodeMapper\Console\Commands;
 
 use Illuminate\Console\Command;
-use Cascade\ClaudioClassMapper\ClassMapper;
-use Cascade\ClaudioClassMapper\GroupManager;
+use PeakFlow\CodeMapper\ClassMapper;
+use PeakFlow\CodeMapper\GroupManager;
 
 class QueryWithClassMapCommand extends Command
 {
@@ -13,7 +13,7 @@ class QueryWithClassMapCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'claudio:query
+    protected $signature = 'code:query
                            {query : The question to ask about the code}
                            {--class=* : Specific class(es) to include in the context}
                            {--group= : Use a predefined group of classes}'; 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper;
+namespace PeakFlow\CodeMapper;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\File;
@@ -25,8 +25,8 @@ class ClassMapper
      */
     public function generateClassMap(array $classNames = []): array
     {
-        $scanPaths = config('claudio-class-mapper.scan_paths');
-        $excludePaths = config('claudio-class-mapper.exclude_paths');
+        $scanPaths = config('code-mapper.scan_paths');
+        $excludePaths = config('code-mapper.exclude_paths');
         
         if (empty($classNames)) {
             // Discover all classes in scan paths
@@ -263,8 +263,8 @@ class ClassMapper
      */
     protected function saveClassMap(): void
     {
-        $diskName = config('claudio-class-mapper.storage_disk', 'local');
-        $storagePath = config('claudio-class-mapper.storage_path');
+        $diskName = config('code-mapper.storage_disk', 'local');
+        $storagePath = config('code-mapper.storage_path');
         $relativePath = str_replace(storage_path('app/'), '', $storagePath);
         
         // Ensure directory exists
@@ -284,8 +284,8 @@ class ClassMapper
      */
     public function loadClassMap(): array
     {
-        $diskName = config('claudio-class-mapper.storage_disk', 'local');
-        $storagePath = config('claudio-class-mapper.storage_path');
+        $diskName = config('code-mapper.storage_disk', 'local');
+        $storagePath = config('code-mapper.storage_path');
         $relativePath = str_replace(storage_path('app/'), '', $storagePath);
         $mapPath = $relativePath . '/class-map.json';
         
@@ -352,9 +352,9 @@ class ClassMapper
      */
     protected function callAiApi(string $query, string $context): string
     {
-        $apiKey = config('claudio-class-mapper.api_key');
-        $provider = config('claudio-class-mapper.ai_provider');
-        $model = config('claudio-class-mapper.model');
+        $apiKey = config('code-mapper.api_key');
+        $provider = config('code-mapper.ai_provider');
+        $model = config('code-mapper.model');
         
         $client = new \GuzzleHttp\Client();
         

@@ -1,11 +1,11 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests\Unit;
+namespace PeakFlow\CodeMapper\Tests\Unit;
 
-use Cascade\ClaudioClassMapper\ClassMapper;
-use Cascade\ClaudioClassMapper\Tests\Fixtures\TestService;
-use Cascade\ClaudioClassMapper\Tests\Fixtures\TestUser;
-use Cascade\ClaudioClassMapper\Tests\TestCase;
+use PeakFlow\CodeMapper\ClassMapper;
+use PeakFlow\CodeMapper\Tests\Fixtures\TestService;
+use PeakFlow\CodeMapper\Tests\Fixtures\TestUser;
+use PeakFlow\CodeMapper\Tests\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

@@ -1,18 +1,18 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper;
+namespace PeakFlow\CodeMapper;
 
 use Illuminate\Support\ServiceProvider;
-use Cascade\ClaudioClassMapper\Console\Commands\GenerateClassMapCommand;
-use Cascade\ClaudioClassMapper\Console\Commands\QueryWithClassMapCommand;
-use Cascade\ClaudioClassMapper\Console\Commands\ManageGroupsCommand;
+use PeakFlow\CodeMapper\Console\Commands\GenerateClassMapCommand;
+use PeakFlow\CodeMapper\Console\Commands\QueryWithClassMapCommand;
+use PeakFlow\CodeMapper\Console\Commands\ManageGroupsCommand;
 
-class ClaudioClassMapperServiceProvider extends ServiceProvider
+class CodeMapperServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/claudio-class-mapper.php' => config_path('claudio-class-mapper.php'),
+            __DIR__ . '/../config/code-mapper.php' => config_path('code-mapper.php'),
         ], 'config');
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
@@ -29,10 +29,10 @@ class ClaudioClassMapperServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/claudio-class-mapper.php', 'claudio-class-mapper'
+            __DIR__ . '/../config/code-mapper.php', 'code-mapper'
         );
 
-        $this->app->singleton('claudio-class-mapper', function ($app) {
+        $this->app->singleton('code-mapper', function ($app) {
             return new ClassMapper($app);
         });
         

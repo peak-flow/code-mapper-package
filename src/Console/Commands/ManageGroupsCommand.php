@@ -1,9 +1,9 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Console\Commands;
+namespace PeakFlow\CodeMapper\Console\Commands;
 
 use Illuminate\Console\Command;
-use Cascade\ClaudioClassMapper\GroupManager;
+use PeakFlow\CodeMapper\GroupManager;
 
 class ManageGroupsCommand extends Command
 {
@@ -12,7 +12,7 @@ class ManageGroupsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'claudio:groups
+    protected $signature = 'code:groups
                            {action? : Action to perform (create, update, delete, list, show)}
                            {name? : Name of the group}
                            {--description= : Description of the group}

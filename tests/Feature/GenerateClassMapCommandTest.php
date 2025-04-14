@@ -1,10 +1,10 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests\Feature;
+namespace PeakFlow\CodeMapper\Tests\Feature;
 
-use Cascade\ClaudioClassMapper\Tests\Fixtures\TestService;
-use Cascade\ClaudioClassMapper\Tests\Fixtures\TestUser;
-use Cascade\ClaudioClassMapper\Tests\TestCase;
+use PeakFlow\CodeMapper\Tests\Fixtures\TestService;
+use PeakFlow\CodeMapper\Tests\Fixtures\TestUser;
+use PeakFlow\CodeMapper\Tests\TestCase;
 use Illuminate\Support\Facades\File;
 
 class GenerateClassMapCommandTest extends TestCase

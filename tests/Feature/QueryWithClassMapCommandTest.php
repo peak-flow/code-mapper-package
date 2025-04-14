@@ -1,11 +1,11 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Tests\Feature;
+namespace PeakFlow\CodeMapper\Tests\Feature;
 
-use Cascade\ClaudioClassMapper\ClassMapper;
-use Cascade\ClaudioClassMapper\GroupManager;
-use Cascade\ClaudioClassMapper\Tests\Fixtures\TestUser;
-use Cascade\ClaudioClassMapper\Tests\TestCase;
+use PeakFlow\CodeMapper\ClassMapper;
+use PeakFlow\CodeMapper\GroupManager;
+use PeakFlow\CodeMapper\Tests\Fixtures\TestUser;
+use PeakFlow\CodeMapper\Tests\TestCase;
 use Illuminate\Support\Facades\File;
 use Mockery;
 

@@ -13,7 +13,7 @@ composer require peak-flow/code-mapper-package
 After installing the package, publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="Cascade\ClaudioClassMapper\ClaudioClassMapperServiceProvider" --tag="config"
+php artisan vendor:publish --provider="PeakFlow\CodeMapper\CodeMapperServiceProvider" --tag="config"
 ```
 
 Run the migrations:
@@ -27,12 +27,12 @@ php artisan migrate
 Configure your AI API settings in your `.env` file:
 
 ```
-CLAUDIO_AI_PROVIDER=openai # or anthropic
-CLAUDIO_API_KEY=your-api-key
-CLAUDIO_MODEL=gpt-4o # or claude-3-opus-20240229
+CODE_MAPPER_AI_PROVIDER=openai # or anthropic
+CODE_MAPPER_API_KEY=your-api-key
+CODE_MAPPER_MODEL=gpt-4o # or claude-3-opus-20240229
 ```
 
-Edit the published configuration file at `config/claudio-class-mapper.php` to customize:
+Edit the published configuration file at `config/code-mapper.php` to customize:
 
 - Scan paths for class discovery
 - Excluded paths
@@ -46,13 +46,13 @@ Edit the published configuration file at `config/claudio-class-mapper.php` to cu
 Generate a class map of all classes in your configured scan paths:
 
 ```bash
-php artisan claudio:generate
+php artisan code:generate
 ```
 
 Or specify particular classes:
 
 ```bash
-php artisan claudio:generate --class=App\\Models\\User --class=App\\Services\\UserService
+php artisan code:generate --class=App\\Models\\User --class=App\\Services\\UserService
 ```
 
 ### Managing Class Groups
@@ -60,31 +60,31 @@ php artisan claudio:generate --class=App\\Models\\User --class=App\\Services\\Us
 Create a group of related classes:
 
 ```bash
-php artisan claudio:groups create auth-system --class=App\\Models\\User --class=App\\Http\\Controllers\\Auth\\LoginController --description="Authentication system classes"
+php artisan code:groups create auth-system --class=App\\Models\\User --class=App\\Http\\Controllers\\Auth\\LoginController --description="Authentication system classes"
 ```
 
 List all groups:
 
 ```bash
-php artisan claudio:groups list
+php artisan code:groups list
 ```
 
 Show details of a specific group:
 
 ```bash
-php artisan claudio:groups show auth-system
+php artisan code:groups show auth-system
 ```
 
 Update a group:
 
 ```bash
-php artisan claudio:groups update auth-system --class=App\\Models\\User --class=App\\Http\\Controllers\\Auth\\RegisterController
+php artisan code:groups update auth-system --class=App\\Models\\User --class=App\\Http\\Controllers\\Auth\\RegisterController
 ```
 
 Delete a group:
 
 ```bash
-php artisan claudio:groups delete auth-system
+php artisan code:groups delete auth-system
 ```
 
 ### Querying with Context
@@ -92,19 +92,19 @@ php artisan claudio:groups delete auth-system
 Ask questions about specific classes:
 
 ```bash
-php artisan claudio:query "How does the user registration process work?" --class=App\\Models\\User --class=App\\Http\\Controllers\\Auth\\RegisterController
+php artisan code:query "How does the user registration process work?" --class=App\\Models\\User --class=App\\Http\\Controllers\\Auth\\RegisterController
 ```
 
 Or use a predefined group:
 
 ```bash
-php artisan claudio:query "How does the user registration process work?" --group=auth-system
+php artisan code:query "How does the user registration process work?" --group=auth-system
 ```
 
 ### Using in Code
 
 ```php
-use Cascade\ClaudioClassMapper\Facades\ClassMapper;
+use PeakFlow\CodeMapper\Facades\ClassMapper;
 
 // Generate a class map
 ClassMapper::generateClassMap(['App\\Models\\User', 'App\\Services\\UserService']);

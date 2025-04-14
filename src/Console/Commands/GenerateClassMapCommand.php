@@ -1,9 +1,9 @@
 <?php
 
-namespace Cascade\ClaudioClassMapper\Console\Commands;
+namespace PeakFlow\CodeMapper\Console\Commands;
 
 use Illuminate\Console\Command;
-use Cascade\ClaudioClassMapper\ClassMapper;
+use PeakFlow\CodeMapper\ClassMapper;
 
 class GenerateClassMapCommand extends Command
 {
@@ -12,7 +12,7 @@ class GenerateClassMapCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'claudio:generate-map
+    protected $signature = 'code:generate
                            {--class=* : Specific class(es) to include in the map}
                            {--force : Force regeneration of the map}'; 
 
@@ -35,7 +35,7 @@ class GenerateClassMapCommand extends Command
         $classNames = $this->option('class');
         $forceRegeneration = $this->option('force');
         
-        $storagePath = config('claudio-class-mapper.storage_path');
+        $storagePath = config('code-mapper.storage_path');
         $mapPath = $storagePath . '/class-map.json';
         
         if (file_exists($mapPath) && !$forceRegeneration && empty($classNames)) {
