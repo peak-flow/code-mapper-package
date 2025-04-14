@@ -1,0 +1,9 @@
+/vendor
+/composer.lock
+/.phpunit.result.cache
+/tests/storage
+/build
+/.idea
+/.vscode
+/node_modules
+/.env

@@ -1,0 +1,39 @@
+{
+    "name": "cascade/claudio-class-mapper",
+    "description": "Laravel package for AI-powered class mapping to enable efficient AI queries with smaller context windows",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cascade\\ClaudioClassMapper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cascade\\ClaudioClassMapper\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cascade"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^9.0|^10.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0",
+        "phpunit/phpunit": "^9.0|^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cascade\\ClaudioClassMapper\\ClaudioClassMapperServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
