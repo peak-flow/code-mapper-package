@@ -46,5 +46,7 @@ return [
     */
     'storage_path' => storage_path('app/claudio-class-mapper'),
     
+    'storage_disk' => 'local',
+    
     'max_tokens_per_chunk' => 8000,
 ];
