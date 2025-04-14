@@ -20,3 +20,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Imports: Group by type (Laravel, PHP core, custom)
 - 4 spaces for indentation, no tabs
 - when creating features
+- when saving commits do not mention createed by claude api
