@@ -263,14 +263,18 @@ class ClassMapper
      */
     protected function saveClassMap(): void
     {
+        $diskName = config('claudio-class-mapper.storage_disk', 'local');
         $storagePath = config('claudio-class-mapper.storage_path');
+        $relativePath = str_replace(storage_path('app/'), '', $storagePath);
         
-        if (!File::exists($storagePath)) {
-            File::makeDirectory($storagePath, 0755, true);
+        // Ensure directory exists
+        if (!Storage::disk($diskName)->exists($relativePath)) {
+            Storage::disk($diskName)->makeDirectory($relativePath);
         }
         
-        $mapPath = $storagePath . '/class-map.json';
-        File::put($mapPath, json_encode($this->classData, JSON_PRETTY_PRINT));
+        // Save class map
+        $mapPath = $relativePath . '/class-map.json';
+        Storage::disk($diskName)->put($mapPath, json_encode($this->classData, JSON_PRETTY_PRINT));
     }
     
     /**
@@ -280,11 +284,13 @@ class ClassMapper
      */
     public function loadClassMap(): array
     {
+        $diskName = config('claudio-class-mapper.storage_disk', 'local');
         $storagePath = config('claudio-class-mapper.storage_path');
-        $mapPath = $storagePath . '/class-map.json';
+        $relativePath = str_replace(storage_path('app/'), '', $storagePath);
+        $mapPath = $relativePath . '/class-map.json';
         
-        if (File::exists($mapPath)) {
-            $this->classData = json_decode(File::get($mapPath), true);
+        if (Storage::disk($diskName)->exists($mapPath)) {
+            $this->classData = json_decode(Storage::disk($diskName)->get($mapPath), true);
         }
         
         return $this->classData;
@@ -415,7 +421,7 @@ class ClassMapper
         $response = $client->post('https://api.anthropic.com/v1/messages', [
             'headers' => [
                 'x-api-key' => $apiKey,
-                'anthropic-version' => '2023-06-01',
+                'anthropic-version' => '2023-06',
                 'Content-Type' => 'application/json',
             ],
             'json' => [
@@ -435,6 +441,6 @@ class ClassMapper
         ]);
         
         $result = json_decode($response->getBody()->getContents(), true);
-        return $result['content'][0]['text'] ?? 'No response from AI';
+        return $result['content'][0]['text'] ?? $result['content'] ?? 'No response from AI';
     }
 }
